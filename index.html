@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bluebike Status</title>
+<script type="text/javascript">
+    window.onload = setupRefresh;
+ 
+    function setupRefresh() {
+      setTimeout("refreshPage();", 3000); // milliseconds
+    }
+    function refreshPage() {
+       window.location = location.href;
+    }
+  </script>
+</head>
+
+<body>
+<h3> Live status of Bluebike at select stations </h3>
+<p><iframe src="SelectStatus.txt" width=600 height=400 frameborder=0 ></iframe></p>
+</body>
+
+</html> 
+
+
+
+<!--
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+  <script type="text/javascript">
+    function refresh() {
+      var req = new XMLHttpRequest();
+      console.log("Grabbing Value");
+      req.onreadystatechange = function () {
+        if (req.readyState == 4 && req.status == 200) {
+          document.getElementById('guwiiFavouriteNumber').innerText = req.responseText;
+        }
+      }
+      req.open("GET", 'reload.txt', true);
+      req.send(null);
+    }
+
+    function init() {
+      refresh()
+      var int = self.setInterval(function () {
+        refresh()
+      }, 10000);
+    }
+  </script>
+</head>
+
+<body onload="init()">
+  <div id="main">
+    <div id="updateMe">
+      <h2>guwii's Favourite Number is:</h2>
+      <h1 id="guwiiFavouriteNumber"></h1>
+    </div>
+  </div>
+</body>
+</html>
+-->
